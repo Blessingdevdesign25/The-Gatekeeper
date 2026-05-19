@@ -1,0 +1,24 @@
+// This is the Prisma schema for The Gatekeeper.
+// Learn more: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  // Use "postgresql" in production — change DATABASE_URL accordingly.
+  // See docs/DEPLOYMENT.md for the switchover steps.
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id        String   @id @default(cuid())
+  name      String
+  email     String   @unique
+  password  String   // bcrypt hash — never the plain-text password
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([email])
+}
