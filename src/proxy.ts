@@ -7,6 +7,10 @@ import { SessionData } from '@/types';
 export default async function proxy(request: NextRequest) {
   const response = NextResponse.next();
 
+  if (process.env.NODE_ENV === 'production' && !process.env.SESSION_SECRET) {
+    throw new Error('CRITICAL SECURITY EXCEPTION: SESSION_SECRET is not set in production. See DEPLOYMENT.md');
+  }
+
   const session = await getIronSession<SessionData>(request, response, sessionOptions);
 
   if (!session.isLoggedIn) {
