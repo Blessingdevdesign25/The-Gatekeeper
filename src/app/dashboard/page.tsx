@@ -1,6 +1,8 @@
 import { requireAuth } from '@/lib/auth';
 import { LogoutButton } from './LogoutButton';
 
+export const dynamic = 'force-dynamic';
+
 export default async function DashboardPage() {
   const session = await requireAuth();
 

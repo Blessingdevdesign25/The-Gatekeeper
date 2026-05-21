@@ -2,6 +2,8 @@ import { NextResponse } from 'next/server';
 import { getSession } from '@/lib/auth';
 import { ApiResponse } from '@/types';
 
+export const dynamic = 'force-dynamic';
+
 export async function POST(): Promise<NextResponse<ApiResponse>> {
   try {
     const session = await getSession();

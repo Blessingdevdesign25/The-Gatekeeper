@@ -6,6 +6,8 @@ import { getSession } from '@/lib/auth';
 import { ApiResponse } from '@/types';
 import { Prisma } from '@prisma/client';
 
+export const dynamic = 'force-dynamic';
+
 export async function POST(req: NextRequest): Promise<NextResponse<ApiResponse>> {
   try {
     const body = await req.json();
