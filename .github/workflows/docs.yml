@@ -27,3 +27,4 @@ jobs:
           publish_dir: ./docs
           commit_message: "docs: deploy documentation to gh-pages [skip ci]"
           enable_jekyll: true
+          disable_nojekyll: true
