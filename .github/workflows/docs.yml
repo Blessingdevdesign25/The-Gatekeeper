@@ -26,3 +26,4 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./docs
           commit_message: "docs: deploy documentation to gh-pages [skip ci]"
+          enable_jekyll: true
