@@ -1,4 +1,7 @@
-# The Gatekeeper 🏰
+---
+layout: default
+title: "The Gatekeeper Documentation"
+---
 
 Welcome to the official documentation for **The Gatekeeper**! This project implements a secure, robust, and highly resilient dual-guard authentication and session management system built with Next.js, Iron-Session, and Prisma.
 
