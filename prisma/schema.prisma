@@ -6,9 +6,10 @@ generator client {
 }
 
 datasource db {
-  // Use "postgresql" in production — change DATABASE_URL accordingly.
-  // See docs/DEPLOYMENT.md for the switchover steps.
-  provider = "sqlite"
+  // PostgreSQL for production on Vercel (e.g. Neon, Supabase, Railway).
+  // Set DATABASE_URL in Vercel environment variables and GitHub secrets.
+  // For local dev, use a local Postgres or a free Neon dev branch.
+  provider = "postgresql"
   url      = env("DATABASE_URL")
 }
 
